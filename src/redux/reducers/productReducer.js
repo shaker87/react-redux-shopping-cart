@@ -33,11 +33,11 @@ const productReducer = (state = initialState, action) => {
       case Types.HANDLE_DECREMENT_ITEM:
           const cloneCartDecrement = [...state.cart]
           
-          let deCrementItem = cloneCartDecrement.find(item => item.id === action.payload.id)
-          if(deCrementItem){
-              deCrementItem.qty -=1;
+          let decrementItem = cloneCartDecrement.find(item => item.id === action.payload.id)
+          if(decrementItem){
+            decrementItem.qty -=1;
           }
-          if(deCrementItem.qty === 0){
+          if(decrementItem.qty === 0){
               const itemIndex = cloneCartDecrement.findIndex(item => item.id ===action.payload.id)
             cloneCartDecrement.splice(itemIndex, 1)
           }
@@ -49,14 +49,14 @@ const productReducer = (state = initialState, action) => {
         
 
         case Types.HANDLE_INCREMENT_ITEM:
-            const cloneCartInecrement = [...state.cart]
-            let incrementItem = cloneCartInecrement.find(item => item.id === action.payload.id)
+            const cloneCartIncrement = [...state.cart]
+            let incrementItem = cloneCartIncrement.find(item => item.id === action.payload.id)
             if(incrementItem){
                 incrementItem.qty +=1;
             }
           return {
             ...state,
-            cart:cloneCartInecrement
+            cart:cloneCartIncrement
           };
 
     default:
