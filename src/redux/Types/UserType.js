@@ -1,0 +1,2 @@
+export const USER_INPUT_HANDLE = "USER_INPUT_HANDLE";
+export const USER_INPUT_SET = "USER_INPUT_SET";
