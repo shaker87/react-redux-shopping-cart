@@ -7,8 +7,12 @@ const Home = () => {
   const { products, cart } = useSelector((state) => state.product);
   console.log("cart :>> ", cart);
 
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  
   const handleAddToCart = (item) => {
     dispatch(addToCart(item));
+   
   };
   return (
     <div className="container">

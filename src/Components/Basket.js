@@ -5,11 +5,12 @@ import { handleDecrementItem, handleIncrementItem } from "../redux/actions/produ
 export default function Basket(props) {
     const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.product);
+  
 
   const handleDecrement = (id) => {
       dispatch(handleDecrementItem(id))
   }
-  const handleInecrement = (id) => {
+  const handleIncrement = (id) => {
     dispatch(handleIncrementItem(id))
 }
 
@@ -33,7 +34,7 @@ export default function Basket(props) {
             <div className="productName">{cartItem.name}</div> 
             <div className="incrementDecrement">
               <button onClick={()=> handleDecrement(cartItem.id)} className="remove">-</button>{" "}
-              <button onClick={()=> handleInecrement(cartItem.id)} className="add">+</button>
+              <button onClick={()=> handleIncrement(cartItem.id)} className="add">+</button>
             </div>
 
             <div className="qtyMultiPrice">{cartItem.qty} x ${cartItem.price}</div>
